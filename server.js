@@ -43,17 +43,51 @@ app.set('view engine', 'ejs');
 // ----------------------
 // ------- Routes -------
 // ----------------------
+app.get('/home', handleHome);
 
 
 // --------------------------------
 // ---- Pages Routes functions ----
 // --------------------------------
 
+function handleHome(req, res) {
+    let harpotArr = [];
+    let url = 'http://hp-api.herokuapp.com/api/characters/house/'
 
+    superagent.get(url).then(data=> {
+
+    })
+    res.render('home' , {objecthp:harpotArr} ).catch(error =>{
+console.log('dude you have an error');
+    });
+    
+    
+    // harpotArr.push(body);
+
+}
 
 // -----------------------------------
 // --- CRUD Pages Routes functions ---
 // -----------------------------------
+
+function Char (data){
+    this.name = data.name;
+    this.species = data.species;
+    this.key
+    this.house
+    this.patronus
+    this.bloodStatus
+    this.role
+    this.school
+    this.deathEater
+    this.dumbledoresArmy
+    this.orderOfThePhoenix
+    this.ministryOfMagic
+    this.alias
+    this.wand
+    this.boggart
+}
+
 
 
 
